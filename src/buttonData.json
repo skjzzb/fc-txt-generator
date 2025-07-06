@@ -1,0 +1,237 @@
+[
+  {
+    "id": "outline-blue-cross",
+    "name": "outline-blue-cross.svg",
+    "src": "/assets/ps/outline-blue-cross.svg"
+  },
+  {
+    "id": "outline-green-triangle",
+    "name": "outline-green-triangle.svg",
+    "src": "/assets/ps/outline-green-triangle.svg"
+  },
+  {
+    "id": "outline-purple-square",
+    "name": "outline-purple-square.svg",
+    "src": "/assets/ps/outline-purple-square.svg"
+  },
+  {
+    "id": "outline-red-circle",
+    "name": "outline-red-circle.svg",
+    "src": "/assets/ps/outline-red-circle.svg"
+  },
+  {
+    "id": "plain-L",
+    "name": "plain-L.svg",
+    "src": "/assets/ps/plain-L.svg"
+  },
+  {
+    "id": "plain-L1",
+    "name": "plain-L1.svg",
+    "src": "/assets/ps/plain-L1.svg"
+  },
+  {
+    "id": "plain-L2",
+    "name": "plain-L2.svg",
+    "src": "/assets/ps/plain-L2.svg"
+  },
+  {
+    "id": "plain-L3",
+    "name": "plain-L3.svg",
+    "src": "/assets/ps/plain-L3.svg"
+  },
+  {
+    "id": "plain-R",
+    "name": "plain-R.svg",
+    "src": "/assets/ps/plain-R.svg"
+  },
+  {
+    "id": "plain-R1",
+    "name": "plain-R1.svg",
+    "src": "/assets/ps/plain-R1.svg"
+  },
+  {
+    "id": "plain-R2",
+    "name": "plain-R2.svg",
+    "src": "/assets/ps/plain-R2.svg"
+  },
+  {
+    "id": "plain-R3",
+    "name": "plain-R3.svg",
+    "src": "/assets/ps/plain-R3.svg"
+  },
+  {
+    "id": "plain-big-PS",
+    "name": "plain-big-PS.svg",
+    "src": "/assets/ps/plain-big-PS.svg"
+  },
+  {
+    "id": "plain-bottom",
+    "name": "plain-bottom.svg",
+    "src": "/assets/ps/plain-bottom.svg"
+  },
+  {
+    "id": "plain-left",
+    "name": "plain-left.svg",
+    "src": "/assets/ps/plain-left.svg"
+  },
+  {
+    "id": "plain-right",
+    "name": "plain-right.svg",
+    "src": "/assets/ps/plain-right.svg"
+  },
+  {
+    "id": "plain-top",
+    "name": "plain-top.svg",
+    "src": "/assets/ps/plain-top.svg"
+  },
+  {
+    "id": "press-L3",
+    "name": "press-L3.svg",
+    "src": "/assets/ps/press-L3.svg"
+  },
+  {
+    "id": "press-R3",
+    "name": "press-R3.svg",
+    "src": "/assets/ps/press-R3.svg"
+  },
+  {
+    "id": "a-filled-green",
+    "name": "a-filled-green.svg",
+    "src": "/assets/xbox/a-filled-green.svg"
+  },
+  {
+    "id": "b-filled red",
+    "name": "b-filled red.svg",
+    "src": "/assets/xbox/b-filled red.svg"
+  },
+  {
+    "id": "dpad-down",
+    "name": "dpad-down.svg",
+    "src": "/assets/xbox/dpad-down.svg"
+  },
+  {
+    "id": "dpad-left",
+    "name": "dpad-left.svg",
+    "src": "/assets/xbox/dpad-left.svg"
+  },
+  {
+    "id": "dpad-right",
+    "name": "dpad-right.svg",
+    "src": "/assets/xbox/dpad-right.svg"
+  },
+  {
+    "id": "dpad-up",
+    "name": "dpad-up.svg",
+    "src": "/assets/xbox/dpad-up.svg"
+  },
+  {
+    "id": "left-bumper",
+    "name": "left-bumper.svg",
+    "src": "/assets/xbox/left-bumper.svg"
+  },
+  {
+    "id": "left-joystick-all",
+    "name": "left-joystick-all.svg",
+    "src": "/assets/xbox/left-joystick-all.svg"
+  },
+  {
+    "id": "left-joystick-down",
+    "name": "left-joystick-down.svg",
+    "src": "/assets/xbox/left-joystick-down.svg"
+  },
+  {
+    "id": "left-joystick-left",
+    "name": "left-joystick-left.svg",
+    "src": "/assets/xbox/left-joystick-left.svg"
+  },
+  {
+    "id": "left-joystick-press",
+    "name": "left-joystick-press.svg",
+    "src": "/assets/xbox/left-joystick-press.svg"
+  },
+  {
+    "id": "left-joystick-right",
+    "name": "left-joystick-right.svg",
+    "src": "/assets/xbox/left-joystick-right.svg"
+  },
+  {
+    "id": "left-joystick-up",
+    "name": "left-joystick-up.svg",
+    "src": "/assets/xbox/left-joystick-up.svg"
+  },
+  {
+    "id": "left-joystick",
+    "name": "left-joystick.svg",
+    "src": "/assets/xbox/left-joystick.svg"
+  },
+  {
+    "id": "left-stick",
+    "name": "left-stick.svg",
+    "src": "/assets/xbox/left-stick.svg"
+  },
+  {
+    "id": "left-trigger",
+    "name": "left-trigger.svg",
+    "src": "/assets/xbox/left-trigger.svg"
+  },
+  {
+    "id": "right-bumper",
+    "name": "right-bumper.svg",
+    "src": "/assets/xbox/right-bumper.svg"
+  },
+  {
+    "id": "right-joystick-all",
+    "name": "right-joystick-all.svg",
+    "src": "/assets/xbox/right-joystick-all.svg"
+  },
+  {
+    "id": "right-joystick-down",
+    "name": "right-joystick-down.svg",
+    "src": "/assets/xbox/right-joystick-down.svg"
+  },
+  {
+    "id": "right-joystick-left",
+    "name": "right-joystick-left.svg",
+    "src": "/assets/xbox/right-joystick-left.svg"
+  },
+  {
+    "id": "right-joystick-press",
+    "name": "right-joystick-press.svg",
+    "src": "/assets/xbox/right-joystick-press.svg"
+  },
+  {
+    "id": "right-joystick-right",
+    "name": "right-joystick-right.svg",
+    "src": "/assets/xbox/right-joystick-right.svg"
+  },
+  {
+    "id": "right-joystick-up",
+    "name": "right-joystick-up.svg",
+    "src": "/assets/xbox/right-joystick-up.svg"
+  },
+  {
+    "id": "right-joystick",
+    "name": "right-joystick.svg",
+    "src": "/assets/xbox/right-joystick.svg"
+  },
+  {
+    "id": "right-stick",
+    "name": "right-stick.svg",
+    "src": "/assets/xbox/right-stick.svg"
+  },
+  {
+    "id": "right-trigger",
+    "name": "right-trigger.svg",
+    "src": "/assets/xbox/right-trigger.svg"
+  },
+  {
+    "id": "x-filled-blue",
+    "name": "x-filled-blue.svg",
+    "src": "/assets/xbox/x-filled-blue.svg"
+  },
+  {
+    "id": "y-filled-yellow",
+    "name": "y-filled-yellow.svg",
+    "src": "/assets/xbox/y-filled-yellow.svg"
+  }
+]
