@@ -217,7 +217,7 @@ export default function App() {
               className="h-8 w-12"
             />
           </div>
-          {/* <div>
+          <div>
             <label className="block text-sm mb-1">Export Width (%)</label>
             <input
               type="range"
@@ -229,7 +229,7 @@ export default function App() {
               className="w-24"
             />
             <div className="text-xs mt-1">{containerWidth}%</div>
-          </div> */}
+          </div>
 
           <div>
             <label className="block text-sm mb-1">Line Gap (px)</label>
@@ -294,18 +294,23 @@ export default function App() {
         </DndContext>
       </div>
 
-      <div ref={ref} className="mt-6 text-center">
-        <div
-          style={{
-            backgroundColor: bgColor,
-            display: 'inline-block',
-            borderRadius: '0.2rem',
-            margin: '0 auto',
-            padding: '4px', // you can tweak padding here
-            maxWidth: '100%',
-            boxSizing: 'border-box'
-          }}
-        >
+     
+        <div ref={ref} className="mt-6 text-center">
+  <div
+    style={{
+      backgroundColor: bgColor,
+      display: 'inline-block',
+      borderRadius: '0.2rem',
+      margin: 'auto auto',
+      // padding: '12px 16px',  // Increased padding
+      maxWidth: '100%',
+      boxSizing: 'border-box',
+      minHeight: 'fit-content',
+      width: `${containerWidth}%`,
+      marginBottom: '25px',
+    }}
+  >
+
 
 
           <div
