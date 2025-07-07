@@ -294,22 +294,22 @@ export default function App() {
         </DndContext>
       </div>
 
-     
-        <div ref={ref} className="mt-6 text-center">
-  <div
-    style={{
-      backgroundColor: bgColor,
-      display: 'inline-block',
-      borderRadius: '0.2rem',
-      margin: 'auto auto',
-      // padding: '12px 16px',  // Increased padding
-      maxWidth: '100%',
-      boxSizing: 'border-box',
-      minHeight: 'fit-content',
-      width: `${containerWidth}%`,
-      marginBottom: '25px',
-    }}
-  >
+
+      <div ref={ref} className="mt-6 text-center">
+        <div
+          style={{
+            backgroundColor: bgColor,
+            display: 'inline-block',
+            borderRadius: '0.2rem',
+            // margin: 'auto auto',
+            // padding: '12px 16px',  // Increased padding
+            maxWidth: '100%',
+            boxSizing: 'border-box',
+            minHeight: 'fit-content',
+            width: `${containerWidth}%`,
+            marginBottom: '25px',
+          }}
+        >
 
 
 
