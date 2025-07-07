@@ -5,14 +5,14 @@ import { CSS } from '@dnd-kit/utilities';
 import * as htmlToImage from 'html-to-image';
 import buttonData from './buttonData.json';
 
-function DraggableButton({ id, src, name, label, fontSize, color, onLabelChange, onFontSizeChange, onColorChange }) {
+function DraggableButton({ id, src, name, label, fontSize, color, onLabelChange, onFontSizeChange, onColorChange, onDelete }) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
     width: '80px',
-    height: '110px',
+    height: '130px',
     cursor: 'grab',
     textAlign: 'center'
   };
@@ -41,6 +41,7 @@ function DraggableButton({ id, src, name, label, fontSize, color, onLabelChange,
         onChange={(e) => onColorChange(id, e.target.value)}
         className="w-full h-6 mt-1"
       />
+      <button onClick={() => onDelete(id)} className="text-xs text-red-600 mt-1">❌</button>
     </div>
   );
 }
@@ -48,19 +49,24 @@ function DraggableButton({ id, src, name, label, fontSize, color, onLabelChange,
 export default function App() {
   const [skillName, setSkillName] = useState('Custom Skill');
   const [previewIcons, setPreviewIcons] = useState([]);
-  const ref = useRef(null);
-  const [skillFont, setSkillFont] = useState('Roboto');
+  const [skillFont, setSkillFont] = useState('Phosphate');
   const [skillFontSize, setSkillFontSize] = useState(24);
   const [skillColor, setSkillColor] = useState('#000000');
   const [skillShadow, setSkillShadow] = useState(true);
+  const [bgColor, setBgColor] = useState('#ffffff');
+  const [lineGap, setLineGap] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(15); // in percentage
 
+
+  const ref = useRef(null);
 
   const handleDownload = async () => {
     if (!ref.current) return;
     const dataUrl = await htmlToImage.toPng(ref.current, {
       pixelRatio: 3,
-      backgroundColor: 'white'
+      backgroundColor: 'transparent'
     });
+
     const link = document.createElement('a');
     link.download = `${skillName.replace(/\s+/g, '_')}.png`;
     link.href = dataUrl;
@@ -103,6 +109,11 @@ export default function App() {
     setPreviewIcons([...previewIcons, { id, isLineBreak: true }]);
   };
 
+  const handleAddSpace = () => {
+    const id = `space-${Date.now()}`;
+    setPreviewIcons([...previewIcons, { id, isSpace: true }]);
+  };
+
   const updateIconField = (id, field, value) => {
     setPreviewIcons(prev =>
       prev.map(icon => icon.id === id ? { ...icon, [field]: value } : icon)
@@ -110,6 +121,10 @@ export default function App() {
   };
 
   const handleClearAll = () => setPreviewIcons([]);
+
+  const handleDelete = (id) => {
+    setPreviewIcons(prev => prev.filter(icon => icon.id !== id));
+  };
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
@@ -144,6 +159,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
       <h1 className="text-2xl font-bold mb-4 text-center">FC 25 Skill Composer (Pro)</h1>
+
       <div className="bg-gray-800 p-4 rounded mb-4">
         <input
           type="text"
@@ -166,6 +182,7 @@ export default function App() {
               <option value="Arial">Arial</option>
               <option value="Poppins">Poppins</option>
               <option value="Courier New">Courier New</option>
+              <option value="Phosphate">Phosphate</option>
             </select>
           </div>
 
@@ -191,6 +208,39 @@ export default function App() {
             />
           </div>
 
+          <div>
+            <label className="block text-sm mb-1">Background Color</label>
+            <input
+              type="color"
+              value={bgColor}
+              onChange={(e) => setBgColor(e.target.value)}
+              className="h-8 w-12"
+            />
+          </div>
+          {/* <div>
+            <label className="block text-sm mb-1">Export Width (%)</label>
+            <input
+              type="range"
+              min="20"
+              max="100"
+              step="1"
+              value={containerWidth}
+              onChange={(e) => setContainerWidth(Number(e.target.value))}
+              className="w-24"
+            />
+            <div className="text-xs mt-1">{containerWidth}%</div>
+          </div> */}
+
+          <div>
+            <label className="block text-sm mb-1">Line Gap (px)</label>
+            <input
+              type="number"
+              value={lineGap}
+              onChange={(e) => setLineGap(Number(e.target.value))}
+              className="text-black p-1 rounded w-20"
+            />
+          </div>
+
           <div className="flex items-center">
             <label className="text-sm mr-2">Shadow</label>
             <input
@@ -202,8 +252,6 @@ export default function App() {
         </div>
       </div>
 
-
-      {/* Buttons Section */}
       {renderButtonGroup('PlayStation', 'ps')}
       {renderButtonGroup('Xbox', 'xbox')}
       {renderButtonGroup('Icons', 'icons')}
@@ -211,6 +259,7 @@ export default function App() {
       <div className="mb-4 flex gap-4 flex-wrap">
         <button onClick={handleClearAll} className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-sm">Clear All</button>
         <button onClick={handleAddNewLine} className="bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded text-sm">Add New Line</button>
+        <button onClick={handleAddSpace} className="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded text-sm">Add Space</button>
         <label className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm cursor-pointer">
           Upload SVG
           <input type="file" accept=".svg" onChange={handleUpload} hidden />
@@ -223,6 +272,8 @@ export default function App() {
             {previewIcons.map((icon) =>
               icon.isLineBreak ? (
                 <div key={icon.id} className="w-full border-t border-gray-300 my-2"></div>
+              ) : icon.isSpace ? (
+                <div key={icon.id} className="w-10"></div>
               ) : (
                 <DraggableButton
                   key={icon.id}
@@ -235,6 +286,7 @@ export default function App() {
                   onLabelChange={(id, val) => updateIconField(id, 'label', val)}
                   onFontSizeChange={(id, val) => updateIconField(id, 'fontSize', val)}
                   onColorChange={(id, val) => updateIconField(id, 'color', val)}
+                  onDelete={handleDelete}
                 />
               )
             )}
@@ -242,40 +294,82 @@ export default function App() {
         </DndContext>
       </div>
 
-      {/* Downloadable Output Preview */}
-      <div ref={ref} className="bg-white text-black mt-6 p-6 rounded shadow text-center">
-        <h2
-          className="mb-4"
+      <div ref={ref} className="mt-6 text-center">
+        <div
           style={{
-            fontFamily: skillFont,
-            fontSize: `${skillFontSize}px`,
-            color: skillColor,
-            textShadow: skillShadow ? '2px 2px 4px rgba(0,0,0,0.4)' : 'none'
+            backgroundColor: bgColor,
+            display: 'inline-block',
+            borderRadius: '0.2rem',
+            margin: '0 auto',
+            padding: '4px', // you can tweak padding here
+            maxWidth: '100%',
+            boxSizing: 'border-box'
           }}
         >
-          {skillName}
-        </h2>
 
-        <div className="flex flex-wrap justify-center gap-2">
-          {previewIcons.map((icon, index) =>
-            icon.isLineBreak ? (
-              <div key={index} className="w-full h-1"></div>
-            ) : (
-              <div key={index} className="flex flex-col items-center">
-                <img src={icon.src} alt={icon.name} className="w-10 h-10" />
-                {icon.label && (
-                  <span
-                    className="text-xs"
-                    style={{ fontSize: `${icon.fontSize}px`, color: icon.color }}
-                  >
-                    {icon.label}
-                  </span>
-                )}
-              </div>
-            )
-          )}
+
+          <div
+            style={{
+              // paddingTop: '4px',
+              // paddingBottom: '4px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: skillFont,
+                fontSize: `${skillFontSize}px`,
+                color: skillColor,
+                textShadow: skillShadow ? '2px 2px 4px rgba(0,0,0,0.4)' : 'none',
+                margin: 0,
+                padding: 0
+              }}
+            >
+              {skillName}
+            </h2>
+
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                rowGap: `${lineGap}px`,
+                columnGap: '4px',
+                margin: 0,
+                padding: 0,
+              }}
+            >
+              {previewIcons.map((icon, index) =>
+                icon.isLineBreak ? (
+                  <div key={index} style={{ width: '100%', height: '1px' }} />
+                ) : icon.isSpace ? (
+                  <div key={index} style={{ width: '10px' }} />
+                ) : (
+                  <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <img src={icon.src} alt={icon.name} style={{ width: '40px', height: '40px', display: 'block' }} />
+                    {icon.label && (
+                      <span
+                        style={{
+                          fontSize: `${icon.fontSize}px`,
+                          color: icon.color,
+                          lineHeight: 1,
+                          marginTop: '2px',
+                        }}
+                      >
+                        {icon.label}
+                      </span>
+                    )}
+                  </div>
+                )
+              )}
+            </div>
+          </div>
         </div>
       </div>
+
+
 
       <div className="text-center mt-4">
         <button
