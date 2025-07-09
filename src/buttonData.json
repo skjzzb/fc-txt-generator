@@ -324,5 +324,29 @@
     "name": "blank.svg",
     "src": "/assets/icons/blank.svg",
     "platform": "icons"
+  },
+  {
+    "id": "OR",
+    "name": "OR.svg",
+    "src": "/assets/icons/OR.svg",
+    "platform": "icons"
+  },
+  {
+    "id": "Ealastico2",
+    "name": "Ealastico2.svg",
+    "src": "/assets/icons/Ealastico2.svg",
+    "platform": "icons"
+  },
+  {
+    "id": "Elastico3",
+    "name": "Elastico3.svg",
+    "src": "/assets/icons/Elastico3.svg",
+    "platform": "icons"
+  },
+  {
+    "id": "Roulete",
+    "name": "Roulete.svg",
+    "src": "/assets/icons/Roulete.svg",
+    "platform": "icons"
   }
 ]

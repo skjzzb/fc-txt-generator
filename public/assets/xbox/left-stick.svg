@@ -1,6 +1,6 @@
 <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect y="5" width="34" height="16" rx="8" fill="#D6E1F6"/>
-<rect x="9" y="21" width="16" height="8" fill="#D6E1F6"/>
+<rect y="5" width="34" height="16" rx="8" fill="#A4BBE7"/>
+<rect x="9" y="21" width="16" height="8" fill="#A4BBE7"/>
 <mask id="path-3-outside-1_2_252" maskUnits="userSpaceOnUse" x="14" y="6.5" width="8" height="14" fill="black">
 <rect fill="white" x="14" y="6.5" width="8" height="14"/>
 <path d="M21.4502 19.5H14.3613V7.59668H17.0425V17.3252H21.4502V19.5Z"/>
